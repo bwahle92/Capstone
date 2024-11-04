@@ -1,0 +1,52 @@
+body>h1 {
+  background-color: black;
+  color: whitesmoke;
+  text-align: center;
+}
+header {
+  padding: 20px;
+  margin: 20px;
+  color: whitesmoke;
+  background: black;
+  text-align: left;
+}
+body {
+  background: linear-gradient(midnightblue, purple);
+}
+nav{
+  color: orange;
+  border: 20px;
+  padding: 20px;
+  margin: 10px;
+}
+div.startButton {
+  text-align: center;
+}
+div#login {
+  color: orange;
+  text-align: right;
+}
+main {
+
+  color: whitesmoke;
+}
+footer {
+  color: orange;
+}
+.wrapper {
+  display: grid;
+  border-width: thick;
+  border-color: orange;
+  color: orange;
+  background-color: black;
+  grid-template-columns: 50px;
+  grid-template-rows: repeat(5, 50px);
+  gap: 20px 20px
+}
+.container {
+  display: flex;
+  justify-content:space-evenly;
+}
+div.info {
+  text-align: center;
+}
