@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default () => html`
+export default state => html`
   <title>Night Wings!</title>
 </head>
 <body>
@@ -13,11 +13,13 @@ export default () => html`
       <button class="startButton"><H2>Create/View Order</H2></button>
   </nav>
   <main>
-      <div>
+    <div>
       <div class="photoQuote"><i>"I liked the wings!" -Jim, 42</i></div>
       <div class="photoQuote"><i>"Came to my door 22 minutes after placing an order. Food was delicious." -Gomer, 30</i></div>
       <div class="photoQuote"><i>"App is simple to use. I can get my favorite bbq wings to my doorstep in 3 clicks."</i> -Mary, 51</div>
     </div>
+    <h3>Today's weather in ${state.weather.city} is ${state.weather.description}.
+      Temperature is ${state.weather.temp}.</h3>
   </main>
 </body>
 <footer>
