@@ -45,7 +45,7 @@ footer {
 }
 .container {
   display: flex;
-  justify-content:space-evenly;
+  flex-direction: column;
 }
 div.info {
   text-align: center;
