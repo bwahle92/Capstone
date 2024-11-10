@@ -17,4 +17,3 @@ export default () => html`
       </p>
   <button class="homeButton" type="button"><h3> Return Home</h3></button>
   `;
-
