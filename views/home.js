@@ -20,10 +20,11 @@ export default state => html`
     </div>
     <h3>Today's weather in ${state.weather.city} is ${state.weather.description}.
       Temperature is ${state.weather.temp}.</h3>
+    <h4>Live in the {} area? It's a great night to schedule a delivery!</h4>
   </main>
 </body>
 <footer>
-  <div id = "1">About Us</div>
-  <div id = "2">Contact Us</div>
+  <!-- <div id = "1">About Us</div>
+  <div id = "2">Contact Us</div> -->
 </footer>
 `;
