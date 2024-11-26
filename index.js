@@ -16,7 +16,13 @@ function render(state = store.home) {
       ${footer()}
     `;
     router.updatePageLinks();
+
 }
+
+let compare = "10006%2C10007"
+let code = "63143"
+
+let distanceURL = `https://app.zipcodebase.com/api/v1/distance?apikey=${process.env.ZIPCODEBASE_API_KEY}&code=${code}&compare=${compare}&country=us`;
 
 router.hooks({
   // We pass in the `done` function to the before hook handler to allow the function to tell Navigo we are finished with the before hook.
@@ -43,10 +49,17 @@ router.hooks({
             };
           done();
         }).catch(error => {
-          console.log("It puked", error);
+          console.log("Something broke", error);
           done();
         });
+
+        axios.get(distanceURL)
+        .then(response =>{
+          console.log(response.data);
+        })
       break;
+      case "orderPage":
+
       default:
         // We must call done for all views so we include default for the views that don't have cases above.
         done();
@@ -59,6 +72,111 @@ router.hooks({
     render(store[view]);
   },
   after: match => {
+    const view = match?.data?.view ? camelCase(match.data.view) : "home";
+
+    if (view === 'orderPage'){
+      let orderButton1 = document.getElementById("addToOrder1")
+      orderButton1.addEventListener("click", () => {
+        store.orderConfirmation.order.push(store.orderPage.wings[0]);
+        console.log(store.orderPage.wings[0]);
+      })
+      let orderInput1 = document.getElementById("orderNumber1")
+      orderInput1.addEventListener("change", (event) => {
+        store.orderPage.wings[0].quantity = event.target.value;
+      })
+
+      let orderButton2 = document.getElementById("addToOrder2")
+      orderButton2.addEventListener("click", () => {
+        store.orderConfirmation.order.push(store.orderPage.sides[0]);
+        console.log(store.orderPage.sides[0]);
+      })
+      let orderInput2 = document.getElementById("orderNumber2")
+      orderInput2.addEventListener("change", (event) => {
+        store.orderPage.sides[0].quantity = event.target.value;
+      })
+
+      let orderButton3 = document.getElementById("addToOrder3")
+      orderButton3.addEventListener("click", () => {
+        store.orderConfirmation.order.push(store.orderPage.wings[1]);
+        console.log(store.orderPage.wings[1]);
+      })
+      let orderInput3 = document.getElementById("orderNumber3")
+      orderInput3.addEventListener("change", (event) => {
+        store.orderPage.wings[1].quantity = event.target.value;
+      })
+
+      let orderButton4 = document.getElementById("addToOrder4")
+      orderButton4.addEventListener("click", () => {
+      store.orderConfirmation.order.push(store.orderPage.sides[1]);
+      console.log(store.orderPage.sides[1]);
+      })
+      let orderInput4 = document.getElementById("orderNumber4")
+      orderInput4.addEventListener("change", (event) => {
+        store.orderPage.sides[1].quantity = event.target.value;
+      })
+
+      let orderButton5 = document.getElementById("addToOrder5")
+      orderButton5.addEventListener("click", () => {
+        store.orderConfirmation.order.push(store.orderPage.wings[2]);
+        console.log(store.orderPage.wings[2]);
+      })
+      let orderInput5 = document.getElementById("orderNumber5")
+      orderInput5.addEventListener("change", (event) => {
+        store.orderPage.wings[2].quantity = event.target.value;
+      })
+
+      let orderButton6 = document.getElementById("addToOrder6")
+      orderButton6.addEventListener("click", () => {
+      store.orderConfirmation.order.push(store.orderPage.sides[2]);
+      console.log(store.orderPage.sides[2]);
+      })
+      let orderInput6 = document.getElementById("orderNumber6")
+      orderInput6.addEventListener("change", (event) => {
+        store.orderPage.sides[2].quantity = event.target.value;
+      })
+
+      let orderButton7 = document.getElementById("addToOrder7")
+      orderButton7.addEventListener("click", () => {
+        store.orderConfirmation.order.push(store.orderPage.wings[3]);
+        console.log(store.orderPage.wings[3]);
+      })
+      let orderInput7 = document.getElementById("orderNumber7")
+      orderInput7.addEventListener("change", (event) => {
+        store.orderPage.wings[3].quantity = event.target.value;
+      })
+
+      let orderButton8 = document.getElementById("addToOrder8")
+      orderButton8.addEventListener("click", () => {
+      store.orderConfirmation.order.push(store.orderPage.sides[3]);
+      console.log(store.orderPage.sides[3]);
+      })
+      let orderInput8 = document.getElementById("orderNumber8")
+      orderInput8.addEventListener("change", (event) => {
+        store.orderPage.sides[3].quantity = event.target.value;
+      })
+
+      let orderButton9 = document.getElementById("addToOrder9")
+      orderButton9.addEventListener("click", () => {
+        store.orderConfirmation.order.push(store.orderPage.wings[4]);
+        console.log(store.orderPage.wings[4]);
+      })
+      let orderInput9 = document.getElementById("orderNumber9")
+      orderInput9.addEventListener("change", (event) => {
+        store.orderPage.wings[4].quantity = event.target.value;
+      })
+
+      let orderButton10 = document.getElementById("addToOrder10")
+      orderButton10.addEventListener("click", () => {
+      store.orderConfirmation.order.push(store.orderPage.sides[4]);
+      console.log(store.orderPage.sides[4]);
+      })
+      let orderInput10 = document.getElementById("orderNumber10")
+      orderInput10.addEventListener("change", (event) => {
+        store.orderPage.sides[4].quantity = event.target.value;
+      })
+    }
+
+
     router.updatePageLinks();
 
     // add menu toggle to bars icon in nav bar

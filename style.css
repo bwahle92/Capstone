@@ -1,57 +1,72 @@
-body>h1 {
-  background-color: black;
+
+h1{
   color: whitesmoke;
   text-align: center;
 }
+
 header {
   padding: 20px;
   margin-inline: 0%;
   color: whitesmoke;
-  background: black;
-  text-align: left;
+  background: linear-gradient(to bottom right, black, midnightblue);
+  text-align: center;
 }
 body {
-  background: linear-gradient(midnightblue, purple);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: linear-gradient(#0A1128, #2b2d42);
 }
-div#login{
+/* div#login{
 position: relative;
 left: 2%;
-}
-button.startButton {
-  margin: auto;
-  display:block;
-}
-div#login {
-  color: orange;
-  text-align: right;
+color: yellow;
+text-align: right;
+position: relative;
+top: 40px;
+} */
+#homeCenter{
+  background: linear-gradient(to bottom right,black, midnightblue);
 }
 main {
-
   color: whitesmoke;
 }
 footer > *{
-  background-color: black;
+  background: linear-gradient(to bottom right,black, midnightblue);
   color: whitesmoke;
   border: 5px solid;
-  border-color: orange;
+  border-color: #0A1128;
   margin-inline: 0%;
   text-align: center;
 }
 div.info {
   text-align: center;
+  color: whitesmoke;
+  background: linear-gradient(to bottom right,black, midnightblue);
 }
 .info>p{
   text-align: center;
 }
-button.homeButton{
+#homeButton{
+  color:whitesmoke;
   margin:auto;
   display:block;
+  text-align: center;
+  border-radius: 5px;
+  border: 5px solid orangered;
 }
 nav {
+  border: 5px solid black;
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 10%;
+  color: gray;
+  background: linear-gradient(to bottom right, black, midnightblue);
+
+}
+#quickOrder{
+  border-radius: 5px;
+  border: 5px solid orangered;
 }
 .wrapper {
   display: grid;
@@ -59,18 +74,25 @@ nav {
   border: 20px whitesmoke;
   color: black;
   grid-template-columns: 150px 150px;
-  grid-template-rows: 20px repeat(5, 280px);
+  grid-template-rows: 20px repeat(5, 320px);
   justify-content: center;
   gap: 30px 30px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
+span.wingsList{
+  color:whitesmoke;
+  position: relative;
+  bottom: 5px;
+}
 div.box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border:1px solid;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 150px;
+  grid-template-rows: 30px 100px 50px 50px;
+  border:2px solid;
   padding: 2rem;
+  background: linear-gradient(midnightblue, black);
 }
 span.wingsList{
   display: block;
@@ -86,18 +108,111 @@ div.item{
   height: 280px;
   text-align: right;
 }
+.item>p{
+  position: relative;
+
+  font-size:smaller;
+}
 .menuPic{
   position: relative;
   left: 5px;
   width: 150px;
   height: 140px;
 }
-input#orderNumber{
+#salad{
+  font-size: small;
   position: relative;
-top: 10px;
+  left: 4px;
+}
+input.orderNumber{
+  position: relative;
+  font-size: large;
+  font-family:inherit;
+  font-weight: 900;
+  top: 23px;
+  left: 60px;
+  width: 40px;
+  background-clip: padding-box;
+}
+button.selectButton{
+  position: relative;
+  top: 30px;
+  right: 70px;
+  height: 35px;
+  width: 60px;
+  background-clip: padding-box;
+  font-family: 'Arial';
+  font-weight: bolder;
 }
 h5.price{
+font-size: small;
+text-align: center;
 position: relative;
-right: 80px;
-bottom: 35px;
+border: 2px solid whitesmoke;
+left: 5px;
+bottom: 60px;
+color: whitesmoke;
+}
+#submitButton{
+  display: block;
+  margin:auto;
+  position: relative;
+  bottom: 20px;
+  font-size: larger;
+  background-clip: padding-box;
+  font-family: fantasy;
+
+}
+@media (max-width: 699px) {
+  /* div#login{
+    font-size:smaller;
+  } */
+  .photoQuote{
+  font-size: smaller;
+  }
+  nav>ul{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    position: relative;
+    right: 20px;
+    bottom: 140px;
+    list-style-type: none;
+    }
+    nav>ul>li{
+      border: 3px solid orangered;
+    border-radius: 4px;
+    background-color: black;
+    position: relative;
+    top: 140px;
+    }
+    #listID{
+    color: orangered;
+    }
+
+}
+@media (min-width: 700px) {
+  nav>ul{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    right: 20px;
+    bottom: 140px;
+    font-size: small;
+    list-style-type: none;
+    }
+    nav>ul>li{
+      border: 3px solid orangered;
+    border-radius: 4px;
+    background-color: black;
+    position: relative;
+    top: 140px;
+    }
+    #listID{
+    color: orangered;
+    }
 }
