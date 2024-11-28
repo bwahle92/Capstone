@@ -1,5 +1,4 @@
 export default {
   header: "!!",
-  view: "orderConfirmation",
-  order: []
+  view: "orderConfirmation"
 };

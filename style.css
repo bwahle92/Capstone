@@ -153,11 +153,10 @@ left: 5px;
 bottom: 60px;
 color: whitesmoke;
 }
-#submitButton{
+#placeOrder{
   display: block;
   margin:auto;
   position: relative;
-  bottom: 20px;
   font-size: larger;
   background-clip: padding-box;
   font-family: fantasy;
@@ -215,4 +214,12 @@ color: whitesmoke;
     #listID{
     color: orangered;
     }
+}
+#orderReceipt{
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+#currentOrder{
+  border: 3px solid whitesmoke;
 }

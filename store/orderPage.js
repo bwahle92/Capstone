@@ -14,5 +14,6 @@ export default {
     { name: "Onion Rings", price: 6.99, quantity: 0 },
     { name: "White Rice", price: 3.99, quantity: 0 },
     { name: "Brownie Mega-Byte", price: 6.99, quantity: 0 }
-  ]
+  ],
+  order: []
 };
