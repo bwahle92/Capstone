@@ -28,6 +28,7 @@ function orderPageEventHandlers() {
     store.orderPage.order.push(store.orderPage.wings[0]);
     console.log(store.orderPage.wings[0]);
     router.navigate("/orderPage");
+
   });
   let orderInput1 = document.getElementById("orderNumber1");
   orderInput1.addEventListener("change", (event) => {
@@ -133,6 +134,34 @@ function orderPageEventHandlers() {
   orderInput10.addEventListener("change", (event) => {
     store.orderPage.sides[4].quantity = event.target.value;
   });
+  let placeOrder = document.getElementById("placeOrder")
+    placeOrder.addEventListener("click", (event) => {
+      console.log("Order Placed...");
+      event.preventDefault();
+
+      console.log(store.orderPage.order);
+      //Create a request body object to send to the API
+      const requestData = {
+        items: store.orderPage.order
+      };
+
+      // Log the request body to the console
+      console.log("request Body", requestData);
+
+     // Make a POST request to the API to create a new order.
+    axios
+      .post(`${process.env.WING_PLACE_API_URL}/orders`, requestData)
+      .then((response) => {
+        store.orderPage.order=response.data.items;
+        store.orderConfirmation.order=response.data;
+
+      router.navigate("/orderConfirmation");
+      })
+      // If there is an error log it to the console.
+      .catch((error) => {
+        console.log("Order failed", error);
+      });
+    });
 }
 
 router.hooks({
@@ -169,7 +198,7 @@ router.hooks({
           console.log(response.data);
         });
         break;
-      case "orderPage":
+
 
       default:
         // We must call done for all views so we include default for the views that don't have cases above.
@@ -188,24 +217,12 @@ router.hooks({
   after: (match) => {
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
 
-    //Set up the event listeners to compile orders to the API:
     if (view === "orderPage") {
       orderPageEventHandlers();
     }
+    //Set up the event listeners to compile orders to the API:
 
-    let updatedOrder = document.getElementById("currentOrder");
-    let total = document.createElement("h1");
-    if (store.orderPage.order.length === 0) {
-      total.textContent = "no order";
-    } else {
-      total.textContent = store.orderPage.order[1];
-    }
 
-    // submit order to be stored
-    // let placeOrder = document.getElementById("placeOrder")
-    // placeOrder.addEventListener("click", () => {
-
-    // })
     console.log(store.orderPage.order);
     router.updatePageLinks();
 
@@ -235,3 +252,6 @@ router
     },
   })
   .resolve();
+
+
+

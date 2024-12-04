@@ -239,10 +239,14 @@ export default state => html`
       Order Summary:
       ${state.order
         .map(orders => {
-          return `<tr><td> Item: ${orders.name}</td><tr><td> Quantity: ${orders.quantity}</td><tr><td> Price: ${orders.price}</td>`;
+          return `<tr><td> Item: ${orders.name}</td>
+          <tr><td> Quantity: ${orders.quantity}</td>
+          <tr><td> Price: ${orders.price}</td>`;
         })
         .join("")}
     </div>
-    <button id="placeOrder" type="button">Place Order</button>
+    <form>
+      <button id="placeOrder" type="submit">Place Order</button>
+    </form>
   </main>
 `;

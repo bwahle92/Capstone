@@ -1,9 +1,9 @@
 import html from "html-literal";
 
-export default () => html`
-<main>
+export default state => html`
+  <main>
     <h3 style="text-align:center">Order Summary</h3>
-    <div id="orderReceipt">[No Order Found]</div>
+    <!-- <div id="noOrder">[No Order Found]</div> -->
+    <p id="orderReceipt">${JSON.stringify(state.order)}</p>
   </main>
-</body>
 `;
