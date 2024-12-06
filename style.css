@@ -1,15 +1,31 @@
 
+.logo{
+  background-color: midnightblue;
+  display: block;
+  margin:auto;
+  width: 600px;
+  background: black;
+  border-left: 1rem solid;
+  border-right:1rem solid;
+}
+
 h1{
   color: whitesmoke;
+  display: block;
+  margin: auto;
   text-align: center;
+  background: linear-gradient(to bottom, black, midnightblue);
+  text-shadow: black 2px 1px 3px;
+
 }
 
 header {
   padding: 20px;
   margin-inline: 0%;
   color: whitesmoke;
-  background: linear-gradient(to bottom right, black, midnightblue);
+  background: linear-gradient(to top left, black, black, midnightblue, midnightblue);
   text-align: center;
+  text-shadow:white 2px 3px 5px;
 }
 body {
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -51,7 +67,7 @@ div.info {
   display:block;
   text-align: center;
   border-radius: 5px;
-  border: 5px solid orangered;
+  border: 5px solid purple;
 }
 nav {
   border: 5px solid black;
@@ -66,7 +82,7 @@ nav {
 }
 #quickOrder{
   border-radius: 5px;
-  border: 5px solid orangered;
+  border: 5px solid purple;
 }
 .wrapper {
   display: grid;
@@ -181,14 +197,14 @@ color: whitesmoke;
     list-style-type: none;
     }
     nav>ul>li{
-      border: 3px solid orangered;
+      border: 3px solid purple;
     border-radius: 4px;
     background-color: black;
     position: relative;
     top: 140px;
     }
     #listID{
-    color: orangered;
+    color: purple;
     }
 
 }
@@ -205,14 +221,14 @@ color: whitesmoke;
     list-style-type: none;
     }
     nav>ul>li{
-      border: 3px solid orangered;
+      border: 3px solid purple;
     border-radius: 4px;
     background-color: black;
     position: relative;
     top: 140px;
     }
     #listID{
-    color: orangered;
+    color: purple;
     }
 }
 #orderReceipt{

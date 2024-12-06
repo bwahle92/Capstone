@@ -2,6 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import orders from "./routers/orders.js";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -43,7 +44,7 @@ const cors = (req, res, next) => {
   res.setHeader("Access-Control-Allow-Credentials", true);
   next();
 };
-
+app.use(cors);
 app.use(express.json());
 app.use(logging);
 
@@ -94,6 +95,7 @@ app.get("/weather/:city", (request, response) => {
     city
   });
 });
+app.use("/orders", orders);
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

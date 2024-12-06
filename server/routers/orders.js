@@ -6,9 +6,9 @@ const router = Router();
 // Create food order route route - http://localhost:4040/orderConfirmation
 router.post("/", async (request, response) => {
   try {
-    const newPizza = new Pizza(request.body);
+    const newOrder = new foodOrder(request.body);
 
-    const data = await newPizza.save();
+    const data = await newOrder.save();
 
     response.json(data);
   } catch (error) {
