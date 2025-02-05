@@ -5,7 +5,7 @@ export default state => html`
     <h3 style="text-align:center">Order Summary</h3>
     <!-- <div id="noOrder">[No Order Found]</div> -->
     <p id="orderReceipt">
-      ${JSON.stringify(state.order.items)}
+      ${JSON.stringify(state.order)}
     </p>
     <div id="orderReceipt2"></div>
   </main>
