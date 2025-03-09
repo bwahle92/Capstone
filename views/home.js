@@ -17,10 +17,10 @@ export default state => html`
     </div>
     <h3>Today's weather in ${state.weather.city} is ${state.weather.description}.
       Temperature is ${state.weather.temp}.</h3>
-    <h4>Not sure if we deliver to your location? Enter zipcode here to find out: </h4>
+    <!-- <h4>Not sure if we deliver to your location? Enter zipcode here to find out: </h4>
     <form action="" method ="get">
       <input type="text" id="zip" required length="5" maxlength="5" size="5" placeholder="63143"/><input type="button" value="Submit"/>
-    </form>
+    </form> -->
   </main>
 </body>
 <footer>
